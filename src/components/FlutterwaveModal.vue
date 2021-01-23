@@ -6,7 +6,6 @@
 </template>
     
 <script>
-import { mapGetters } from "vuex"
 
   export default {
     name: 'FlutterwaveModal',
@@ -65,13 +64,6 @@ import { mapGetters } from "vuex"
               default: "card,mobilemoney,ussd"
             }
           },
-
-          computed: {
-    ...mapGetters({
-        // map `this.user` to `this.$store.getters.user`s
-        user: "user"
-    }),
-         },
 
     created() {
             const script = document.createElement("script")
