@@ -11,6 +11,9 @@
         >
         <v-card tile style="" class="elevation-24" width="400px" height="600px">
         <v-img src="@/assets/Habib.png" width="400px" height="600px" >
+        <div style="text-align:center">
+        <v-btn href="#register" style="margin-top:520px" large class="justify-center black--text font-weight-bold" color="#f5a623" rounded>Register Now</v-btn>
+        </div>
         </v-img>
         </v-card>
         
@@ -21,8 +24,19 @@
         md="6"
         sm="12">
           <v-card tile style="padding:30px" width="500px"  height="600px" class="elevation-24">
-           <p style="font-size:21px;margin-top:30px" class="font-weight-bold"> Register for this MasterClass below: </p>
-            <v-form @submit="makePayment()">
+          <v-chip color="red" small class="white--text" style="margin-botom:-20px">Early Bird ends in:</v-chip>
+          <div class="">
+  <div id="countdown">
+    <ul>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
+    </ul>
+  </div>
+</div>
+           <p style="font-size:19px" class="font-weight-bold"> Register for this MasterClass below: </p>
+            <v-form id="register" @submit="makePayment()">
             <v-select
                       v-model="country"
                       :items="currency"
@@ -37,7 +51,7 @@
 
            <v-text-field v-model="name" color="#f5a623" outlined label="Name" />
           <v-text-field v-model="email" color="#f5a623" outlined label="Email" />
-          <v-card-actions class="justify-end">
+          <v-card-actions class="justify-end" style="margin-top:-20px">
             <flutterwave
               :is-production="isProduction"
               :name="name"
@@ -54,7 +68,7 @@
           </v-card-actions>
           </v-form>
          <p style="text-align:center;font-size:15px" class="font-weight-bold mt-2">OR</p>
-         <v-btn class="mt-2  fadein-down justify-center" block style="text-align:center" rounded large color="#24cc63" href="https://api.whatsapp.com/send?phone=2348167299743&text=Hi%20Tell!.%20I%20would%20like%20to%20register%20for%20Sir%20Habib's%20Marketing%20class.%20My%20name%20is:"><v-icon class="white--text">mdi-whatsapp</v-icon><span class="white--text px-2" >Pay Through WhatsApp</span></v-btn>
+         <v-btn class="fadein-down justify-center" block style="text-align:center" rounded large color="#24cc63" href="https://api.whatsapp.com/send?phone=2348167299743&text=Hi%20Tell!.%20I%20would%20like%20to%20register%20for%20Sir%20Habib's%20Marketing%20class.%20My%20name%20is:"><v-icon class="white--text">mdi-whatsapp</v-icon><span class="white--text px-2" >Pay Through WhatsApp</span></v-btn>
          </v-card>
          </v-col>
       </v-row>
@@ -124,6 +138,42 @@ export default {
 
   },
 
+  created(){
+    (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  let birthday = "Feb 6, 2021 17:00:00",
+      countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        let now = new Date().getTime(),
+            distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          let headline = document.getElementById("headline"),
+              countdown = document.getElementById("countdown"),
+              content = document.getElementById("content");
+
+          headline.innerText = "It's my birthday!";
+          countdown.style.display = "none";
+          content.style.display = "block";
+
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+  },
+
   methods:{
                 makePayment() {
               window.FlutterwaveCheckout({
@@ -190,6 +240,62 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  letter-spacing: .100rem;
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  font-size: 0.7em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: capitalize;
+}
+
+li span {
+  display: block;
+  font-size: 1.0rem;
+}
+
+.message {
+  font-size: 1rem;
+}
+
+#content {
+  display: none;
+  padding: 5px;
+}
+
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+  
+  li {
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  li span {
+    font-size: 16px;
+  }
+}
 
 html,
 body {
