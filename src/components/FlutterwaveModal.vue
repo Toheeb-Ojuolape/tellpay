@@ -1,5 +1,5 @@
 <template>
-    <v-btn color="#f5a623" block tile large class="mt--2 button white--text" justify-end @click="makePayment">
+    <v-btn color="#f5a623" block tile large class="button white--text" justify-end @click="makePayment">
       Register Now
     </v-btn>
  

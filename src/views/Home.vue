@@ -12,7 +12,7 @@
         <v-card tile style="" class="elevation-24" width="400px" height="600px">
         <v-img src="@/assets/Habib.png" width="400px" height="600px" >
         <div style="text-align:center">
-        <v-btn href="#register" style="margin-top:520px" large class="justify-center black--text font-weight-bold" color="#f5a623" rounded>Register Now</v-btn>
+        <v-btn href="#register" style="margin-top:520px" large class="fadein justify-center black--text font-weight-bold" color="#f5a623" rounded>Register Now</v-btn>
         </div>
         </v-img>
         </v-card>
@@ -311,7 +311,7 @@ body {
 }
 
 .fadein {
-  animation: fadeIn 3s;
+  animation: fadeIn 4s;
 }
 
 @keyframes fadeIn {
@@ -324,7 +324,7 @@ body {
 }
 
 .fadein-down {
-  animation: fadeInDown 3s;
+  animation: fadeInDown 6s;
 }
 
 @keyframes fadeInDown {
