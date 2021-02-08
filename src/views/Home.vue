@@ -28,10 +28,10 @@
           <div class="">
   <div id="countdown">
     <ul>
-      <li><span id="days"></span>days</li>
-      <li><span id="hours"></span>Hours</li>
-      <li><span id="minutes"></span>Minutes</li>
-      <li><span id="seconds"></span>Seconds</li>
+      <li><span>0</span>days</li>
+      <li><span>0</span>Hours</li>
+      <li><span>0</span>Minutes</li>
+      <li><span>0</span>Seconds</li>
     </ul>
   </div>
 </div>
@@ -140,10 +140,10 @@ export default {
 
   created(){
     (function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
+  const second = 0,
+        minute = 0 * 60,
+        hour = 0 * 60,
+        day = 0 * 24;
 
   let birthday = "Feb 6, 2021 17:00:00",
       countDown = new Date(birthday).getTime(),
@@ -197,32 +197,32 @@ export default {
 
     selectFee(){
       if (this.country == "USD"){
-        this.fee= 8
+        this.fee= 14
       }else if(this.country == "NGN") {
-        this.fee = 3000
+        this.fee = 5000
       }else if(this.country == "KES") {
         this.fee = 870
       }
       else if(this.country == "AUD") {
-        this.fee = 10.2
+        this.fee = 17.14
       }
       else if(this.country == "AED") {
-        this.fee = 30
+        this.fee = 48.17
       }
       else if(this.country == "CAD") {
-        this.fee = 10
+        this.fee = 16.76
       }
       else if(this.country == "EUR") {
-        this.fee = 7
+        this.fee = 10.91
       }
       else if(this.country == "GBP") {
-        this.fee = 6
+        this.fee = 9.58
       }else if(this.country == "GHS") {
-        this.fee = 46
+        this.fee = 75.84
       } else if(this.country == "SAR") {
-        this.fee = 30
+        this.fee = 49.20
       } else if(this.country == "ZAR") {
-        this.fee = 120
+        this.fee = 196.25
       }
       },
       callbackFlutter(response) {
