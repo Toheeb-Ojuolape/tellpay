@@ -13,7 +13,7 @@
             isProduction: {
               type: Boolean,
               required: false,
-              default: false //set to true if you are going live
+              default: true //set to true if you are going live
             },
             email: {
               type: null,

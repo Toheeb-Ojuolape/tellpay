@@ -5,12 +5,12 @@
       <v-row no-gutters class="justify-center">
         <v-col
         cols="12"
-        md="4"
+        md="6"
         sm="12"
         
         >
-        <v-card tile style="" class="elevation-24" width="400px" height="600px">
-        <v-img src="@/assets/Habib.png" width="400px" height="600px" >
+        <v-card tile style="" class="elevation-24" width="600px" height="600px">
+        <v-img src="@/assets/masterclass.png" width="600px" height="600px" >
         <div style="text-align:center">
         <v-btn href="#register" style="margin-top:520px" large class="fadein justify-center black--text font-weight-bold" color="#f5a623" rounded>Register Now</v-btn>
         </div>
@@ -23,15 +23,15 @@
           cols="12"
         md="6"
         sm="12">
-          <v-card tile style="padding:30px" width="500px"  height="600px" class="elevation-24">
+          <v-card tile style="padding:30px" width="600px"  height="600px" class="elevation-24">
           <v-chip color="red" small class="white--text" style="margin-botom:-20px">Early Bird ends in:</v-chip>
           <div class="">
   <div id="countdown">
     <ul>
-      <li><span>0</span>days</li>
-      <li><span>0</span>Hours</li>
-      <li><span>0</span>Minutes</li>
-      <li><span>0</span>Seconds</li>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
     </ul>
   </div>
 </div>
@@ -68,7 +68,7 @@
           </v-card-actions>
           </v-form>
          <p style="text-align:center;font-size:15px" class="font-weight-bold mt-2">OR</p>
-         <v-btn class="fadein-down justify-center" block style="text-align:center" rounded large color="#24cc63" href="https://api.whatsapp.com/send?phone=2348167299743&text=Hi%20Tell!.%20I%20would%20like%20to%20register%20for%20Sir%20Habib's%20Marketing%20class.%20My%20name%20is:"><v-icon class="white--text">mdi-whatsapp</v-icon><span class="white--text px-2" >Pay Through WhatsApp</span></v-btn>
+         <v-btn class="fadein-down justify-center" block style="text-align:center" rounded large color="#24cc63" href="https://api.whatsapp.com/send?phone=2348167299743&text=Hi%20Tell!.%20I%20would%20like%20to%20register%20for%20the%20Satire%20writing%20Masterclass.%20My%20name%20is"><v-icon class="white--text">mdi-whatsapp</v-icon><span class="white--text px-2" >Pay Through WhatsApp</span></v-btn>
          </v-card>
          </v-col>
       </v-row>
@@ -140,12 +140,12 @@ export default {
 
   created(){
     (function () {
-  const second = 0,
-        minute = 0 * 60,
-        hour = 0 * 60,
-        day = 0 * 24;
+   const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
 
-  let birthday = "Feb 6, 2021 17:00:00",
+  let birthday = "Feb 28, 2021 17:00:00",
       countDown = new Date(birthday).getTime(),
       x = setInterval(function() {    
 
@@ -197,14 +197,14 @@ export default {
 
     selectFee(){
       if (this.country == "USD"){
-        this.fee= 14
+        this.fee= 8
       }else if(this.country == "NGN") {
-        this.fee = 5000
+        this.fee = 3000
       }else if(this.country == "KES") {
-        this.fee = 870
+        this.fee = 863
       }
       else if(this.country == "AUD") {
-        this.fee = 17.14
+        this.fee = 11
       }
       else if(this.country == "AED") {
         this.fee = 48.17
@@ -218,11 +218,11 @@ export default {
       else if(this.country == "GBP") {
         this.fee = 9.58
       }else if(this.country == "GHS") {
-        this.fee = 75.84
+        this.fee = 46
       } else if(this.country == "SAR") {
         this.fee = 49.20
       } else if(this.country == "ZAR") {
-        this.fee = 196.25
+        this.fee = 115
       }
       },
       callbackFlutter(response) {
