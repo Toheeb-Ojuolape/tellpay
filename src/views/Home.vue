@@ -24,7 +24,7 @@
         md="6"
         sm="12">
           <v-card tile style="padding:30px" width="600px"  height="600px" class="elevation-24">
-          <v-chip color="red" small class="white--text" style="margin-botom:-20px">Early Bird ends in:</v-chip>
+          <v-chip color="red" small class="white--text">Early Bird ends in:</v-chip>
           <div class="">
   <div id="countdown">
     <ul>
@@ -145,7 +145,7 @@ export default {
         hour = minute * 60,
         day = hour * 24;
 
-  let birthday = "Feb 28, 2021 17:00:00",
+  let birthday = "Mar 6, 2021 12:00:00",
       countDown = new Date(birthday).getTime(),
       x = setInterval(function() {    
 
