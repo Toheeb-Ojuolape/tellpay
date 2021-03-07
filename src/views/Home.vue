@@ -28,10 +28,10 @@
           <div class="">
   <div id="countdown">
     <ul>
-      <li><span id="days"></span>days</li>
-      <li><span id="hours"></span>Hours</li>
-      <li><span id="minutes"></span>Minutes</li>
-      <li><span id="seconds"></span>Seconds</li>
+      <li><span >0</span>days</li>
+      <li><span >0</span>Hours</li>
+      <li><span>0</span>Minutes</li>
+      <li><span>0</span>Seconds</li>
     </ul>
   </div>
 </div>
@@ -199,30 +199,30 @@ export default {
       if (this.country == "USD"){
         this.fee= 8
       }else if(this.country == "NGN") {
-        this.fee = 3000
+        this.fee = 5000
       }else if(this.country == "KES") {
-        this.fee = 863
+        this.fee = 900
       }
       else if(this.country == "AUD") {
-        this.fee = 11
+        this.fee = 15
       }
       else if(this.country == "AED") {
-        this.fee = 48.17
+        this.fee = 60
       }
       else if(this.country == "CAD") {
-        this.fee = 16.76
+        this.fee = 21
       }
       else if(this.country == "EUR") {
-        this.fee = 10.91
+        this.fee = 13
       }
       else if(this.country == "GBP") {
-        this.fee = 9.58
+        this.fee = 12
       }else if(this.country == "GHS") {
-        this.fee = 46
+        this.fee = 51
       } else if(this.country == "SAR") {
-        this.fee = 49.20
+        this.fee = 53
       } else if(this.country == "ZAR") {
-        this.fee = 115
+        this.fee = 119
       }
       },
       callbackFlutter(response) {
