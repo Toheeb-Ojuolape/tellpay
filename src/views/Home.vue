@@ -15,7 +15,7 @@
     </ul>
   </div>
 </div>
-           <p style="font-size:19px" class="font-weight-bold"> Register Scriptwriting MasterClass below: </p>
+           <p style="font-size:19px" class="font-weight-bold"> Register for Scriptwriting MasterClass below: </p>
             <v-form id="register" @submit="makePayment()">
             <v-select
                       v-model="country"
