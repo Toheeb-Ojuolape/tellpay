@@ -3,39 +3,19 @@
     <v-main style="background:#baddf6">
       <v-container>
       <v-row no-gutters class="justify-center">
-        <v-col
-        cols="12"
-        md="6"
-        sm="12"
-        
-        >
-        <v-card tile style="" class="elevation-24" width="600px" height="600px">
-        <v-img src="@/assets/masterclass.png" width="600px" height="600px" >
-        <div style="text-align:center">
-        <v-btn href="#register" style="margin-top:520px" large class="fadein justify-center black--text font-weight-bold" color="#f5a623" rounded>Register Now</v-btn>
-        </div>
-        </v-img>
-        </v-card>
-        
-        
-        </v-col>
-         <v-col 
-          cols="12"
-        md="6"
-        sm="12">
           <v-card tile style="padding:30px" width="600px"  height="600px" class="elevation-24">
           <v-chip color="red" small class="white--text">Early Bird ends in:</v-chip>
           <div class="">
   <div id="countdown">
     <ul>
-      <li><span >0</span>days</li>
-      <li><span >0</span>Hours</li>
-      <li><span>0</span>Minutes</li>
-      <li><span>0</span>Seconds</li>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
     </ul>
   </div>
 </div>
-           <p style="font-size:19px" class="font-weight-bold"> Register for this MasterClass below: </p>
+           <p style="font-size:19px" class="font-weight-bold"> Register Scriptwriting MasterClass below: </p>
             <v-form id="register" @submit="makePayment()">
             <v-select
                       v-model="country"
@@ -68,10 +48,9 @@
           </v-card-actions>
           </v-form>
          <p style="text-align:center;font-size:15px" class="font-weight-bold mt-2">OR</p>
-         <v-btn class="fadein-down justify-center" block style="text-align:center" rounded large color="#24cc63" href="https://api.whatsapp.com/send?phone=2348167299743&text=Hi%20Tell!.%20I%20would%20like%20to%20register%20for%20the%20Satire%20writing%20Masterclass.%20My%20name%20is"><v-icon class="white--text">mdi-whatsapp</v-icon><span class="white--text px-2" >Pay Through WhatsApp</span></v-btn>
-         </v-card>
-         </v-col>
-      </v-row>
+         <v-btn class="fadein-down justify-center" block style="text-align:center" rounded large color="#24cc63" href="https://api.whatsapp.com/send?phone=2348167299743&text=Hi%20Tell!.%20I%20would%20like%20to%20register%20for%20the%20Script%20writing%20Masterclass.%20My%20name%20is"><v-icon class="white--text">mdi-whatsapp</v-icon><span class="white--text px-2" >Pay Through WhatsApp</span></v-btn>
+         </v-card>      
+         </v-row>
         
 
       
@@ -145,7 +124,7 @@ export default {
         hour = minute * 60,
         day = hour * 24;
 
-  let birthday = "Mar 7, 2021 00:00:00",
+  let birthday = "May 20, 2021 00:00:00",
       countDown = new Date(birthday).getTime(),
       x = setInterval(function() {    
 
@@ -199,7 +178,7 @@ export default {
       if (this.country == "USD"){
         this.fee= 8
       }else if(this.country == "NGN") {
-        this.fee = 5000
+        this.fee = 3000
       }else if(this.country == "KES") {
         this.fee = 900
       }
@@ -213,7 +192,7 @@ export default {
         this.fee = 21
       }
       else if(this.country == "EUR") {
-        this.fee = 13
+        this.fee = 7
       }
       else if(this.country == "GBP") {
         this.fee = 12
@@ -239,7 +218,6 @@ export default {
 
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100&display=swap");
 
 * {
   box-sizing: border-box;
@@ -257,6 +235,7 @@ h1 {
   font-weight: bold;
   letter-spacing: .100rem;
   text-transform: uppercase;
+  font-family:'Montserrat'
 }
 
 li {
@@ -299,11 +278,11 @@ li span {
 
 html,
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat"
 }
 
 #app {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat"
 }
 
 .v-btn {
