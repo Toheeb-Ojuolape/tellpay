@@ -8,10 +8,10 @@
           <div class="">
   <div id="countdown">
     <ul>
-      <li><span id="days"></span>days</li>
-      <li><span id="hours"></span>Hours</li>
-      <li><span id="minutes"></span>Minutes</li>
-      <li><span id="seconds"></span>Seconds</li>
+      <li><span id="dayss">0</span>days</li>
+      <li><span id="hourss">0</span>Hours</li>
+      <li><span id="minutess">0</span>Minutes</li>
+      <li><span id="secondss">0</span>Seconds</li>
     </ul>
   </div>
 </div>
@@ -178,7 +178,7 @@ export default {
       if (this.country == "USD"){
         this.fee= 8
       }else if(this.country == "NGN") {
-        this.fee = 3000
+        this.fee = 5000
       }else if(this.country == "KES") {
         this.fee = 900
       }
